@@ -24,12 +24,22 @@ Este proyecto utiliza una arquitectura de red local para comunicar el dispositiv
     ```
 2.  La terminal debería mostrar el mensaje: `Server is listening on http://localhost:3000`.
 
-#### **4. Conexión de los Clientes**
-*   **Cliente de Visuales (PC):** Abra el navegador en el computador y acceda a: `http://localhost:3000`. (Asegúrese de permitir el acceso a la cámara si el navegador lo solicita).
-*   **Cliente de Joystick (Smartphone):** 
-    1.  Identifique la **IP local** de su computador (ej. `192.168.1.15`).
-    2.  Desde el navegador de su teléfono, acceda a: `http://[TU-IP-LOCAL]:3000`.
-    3.  Al tocar y arrastrar en la pantalla del móvil, los colores de la silueta en el PC deberían cambiar en tiempo real.
+
+Aquí tienes el ajuste para la sección de conexión, sustituyendo la IP local por el uso de **Dev Tunnels** para un acceso público más sencillo:
+
+---
+
+#### **4. Conexión de los Clientes (Vía Dev Tunnels)**
+Para facilitar la conexión del smartphone sin configuraciones de red complejas o IPs locales, se recomienda utilizar la función de **Dev Tunnels** de VS Code para generar una URL pública:
+
+*   **Cliente de Visuales (PC):** Abra el navegador en el computador y acceda a: `http://localhost:3000`. (Asegúrese de permitir el acceso a la cámara).
+*   **Cliente de Joystick (Smartphone):**
+    1. En VS Code, diríjase a la pestaña de **Ports** (Puertos) en el panel inferior.
+    2. Haga clic en **Forward a Port** e ingrese el puerto `3000`.
+    3. Una vez creado, haga clic derecho sobre el puerto en la columna "Visibility" y cámbielo de **Private** a **Public**.
+    4. Copie la dirección generada en la columna **Forwarded Address** (ej. `https://xyz-3000.use.devtunnels.ms`).
+    5. Ingrese esa URL en el navegador de su teléfono móvil.
+    6. Al tocar y arrastrar en la pantalla del móvil, la señal se transmitirá de forma pública al servidor, permitiendo el control total del color sin cables.
 
 ---
 
